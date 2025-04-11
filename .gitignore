@@ -1,0 +1,11 @@
+/frontend/node_modules
+/frontend/src/assets/
+/README.md
+/backend/node_modules/
+/backend/public/uploads
+/backend/.env
+/frontend/public/
+/frontend/.vscode
+/.vscode/
+/backend/README.md
+/frontend/README.md
