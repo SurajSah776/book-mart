@@ -51,12 +51,12 @@ function Dashboard() {
     return <div className="text-center py-8 text-red-500">Error: {error}</div>;
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="bg-f5f5f0 container mx-auto px-4 py-8">
       <div className="flex items-center mb-6">
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-2xl font-bold text-212529">
           Welcome back, {userData?.firstName || "Book Lover"}!
         </h1>
-        <FaBookOpen className="ml-2 text-blue-600" />
+        <FaBookOpen className="ml-2 text-3e78ed" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -65,22 +65,22 @@ function Dashboard() {
           <PostList userId={userData?._id} />
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow-md h-fit">
-          <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
+        <div className="bg-ffffff p-6 rounded-lg shadow-md h-fit shadow-gray-300">
+          <h2 className="text-xl font-semibold mb-4 text-212529">Quick Actions</h2>
           <div className="space-y-3">
             <button
               onClick={() => (window.location.href = "/create-post")}
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+              className="w-full bg-3e78ed text-white py-2 px-4 rounded-md hover:bg-4a7de6"
             >
               Share a New Book
             </button>
 
             {/* Profile page */}
             <NavLink
-              to={`/profile/${currentUser?._id}`}
-              className="flex items-center px-1 h-full hover:bg-gray-600"
+              to={`/profile/${currentUser?._id}` }
+              className="flex items-center px-1 h-full hover:bg-e9ecef"
             >
-              <button className="w-full bg-gray-100 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-200">
+              <button className="w-full bg-ffffff text-495057 py-2 px-4 rounded-md hover:bg-e9ecef">
                 View Your Profile
               </button>
             </NavLink>

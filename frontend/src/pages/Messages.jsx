@@ -103,15 +103,19 @@ const Messages = () => {
   if (loading) return <div className="text-center py-8">Loading...</div>;
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-6">Messages</h1>
+    <div className="bg-f5f5f0 max-w-6xl mx-auto p-4">
+      <h1 className="text-2xl font-bold text-212529 mb-6">Messages</h1>
 
+      {/* Main conversation Area */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Conversations List */}
-        <div className="bg-white rounded-lg shadow-sm p-4 h-[calc(100vh-200px)] overflow-y-auto">
+        <div className="bg-white rounded-lg shadow-sm p-4 h-[calc(100vh-200px)] overflow-y-auto" style={{
+              scrollbarColor: "#adb5bd transparent",
+              scrollbarWidth: "thin",
+            }}>
           {conversations.length === 0 ? (
             <p className="text-gray-500 text-center">No conversations yet</p>
-          ) : (
+          ) : (           
             conversations.map((conversation) => (
               <button
                 key={`${conversation.postId._id}_${conversation.otherUser._id}`}
@@ -122,13 +126,13 @@ const Messages = () => {
                     conversation.otherUser._id
                   );
                 }}
-                className={`w-full text-left p-3 rounded-lg mb-2 hover:bg-gray-50 transition-colors ${
+                className={`w-full text-left p-3 rounded-lg mb-2 hover:bg-e9ecef transition-colors ${
                   selectedConversation?.postId._id ===
                     conversation.postId._id &&
                   selectedConversation?.otherUser._id ===
                     conversation.otherUser._id
-                    ? "bg-blue-50"
-                    : ""
+                    ? "bg-e9ecef"
+                    : ""// #e9ecef
                 }`}
               >
                 <div className="flex items-center space-x-3">
@@ -144,16 +148,16 @@ const Messages = () => {
                     )}
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium">
+                    <p className="font-medium text-212529">
                       {conversation.otherUser.firstName}{" "}
                       {conversation.otherUser.lastName}
                     </p>
-                    <p className="text-sm text-gray-500 truncate">
+                    <p className="text-sm text-495057 truncate">
                       {conversation.postId.bookName}
                     </p>
                   </div>
                   {conversation.unreadCount > 0 && (
-                    <FaCircle className="text-blue-500 text-xs" />
+                    <FaCircle className="text-3e78ed text-xs" />
                   )}
                 </div>
               </button>
@@ -162,10 +166,10 @@ const Messages = () => {
         </div>
 
         {/* Messages Area */}
-        <div className="md:col-span-2 bg-white rounded-lg shadow-sm p-4 h-[calc(100vh-200px)] flex flex-col">
+        <div className="md:col-span-2 bg-white rounded-lg shadow-sm p-4 h-[calc(100vh-200px)] flex flex-col" style={{ scrollbarColor: "#adb5bd transparent", scrollbarWidth: "thin", }}>
           {selectedConversation ? (
             <>
-              {/* Conversation Header */}
+              {/* Conversation Header */}  
               <div className="border-b pb-4 mb-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
@@ -180,13 +184,13 @@ const Messages = () => {
                     )}
                   </div>
                   <div>
-                    <h2 className="font-medium">
+                    <h2 className="font-medium text-212529">
                       {selectedConversation.otherUser.firstName}{" "}
                       {selectedConversation.otherUser.lastName}
                     </h2>
                     <Link
                       to={`/posts/${selectedConversation.postId._id}`}
-                      className="text-sm text-blue-500 hover:underline"
+                      className="text-sm text-3e78ed hover:underline"
                     >
                       View Book: {selectedConversation.postId.bookName}
                     </Link>
@@ -206,10 +210,10 @@ const Messages = () => {
                     }`}
                   >
                     <div
-                      className={`max-w-[70%] p-3 rounded-lg ${
+                      className={`max-w-[70%] p-3 rounded-lg text-212529 ${
                         message.sender._id === currentUser._id
-                          ? "bg-blue-500 text-white"
-                          : "bg-gray-100 text-gray-800"
+                          ? "bg-3e78ed text-white"
+                          : "bg-e9ecef text-212529"
                       }`}
                     >
                       <p className="text-sm">{message.content}</p>
@@ -228,13 +232,13 @@ const Messages = () => {
                   value={newMessage}
                   onChange={(e) => setNewMessage(e.target.value)}
                   placeholder="Type your message..."
-                  className="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1 border border-e9ecef rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-3e78ed"
                 />
                 <button
                   type="submit"
                   disabled={!newMessage.trim()}
-                  className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                >
+                  className="bg-3e78ed text-white px-6 py-2 rounded-lg hover:bg-[hsl(229,68%,58%)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >                
                   Send
                 </button>
               </form>
@@ -249,5 +253,4 @@ const Messages = () => {
     </div>
   );
 };
-
 export default Messages;

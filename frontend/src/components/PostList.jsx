@@ -92,14 +92,14 @@ const PostList = ({ userId }) => {
 
       {/* Empty state */}
       {filteredPosts.length === 0 ? (
-        <div className="text-center py-8 bg-white rounded-lg shadow mx-4">
-          <p className="text-gray-500">
+        <div className="text-center py-8 bg-[#f5f5f0] rounded-lg shadow mx-4">
+          <p className="text-[#212529]">
             {userId ? "No books shared yet." : "No books match your search."}
           </p>
           {userId && (
             <Link
               to="/create-post"
-              className="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+              className="mt-4 inline-block bg-[#3e78ed] text-white py-2 px-4 rounded-md hover:bg-[#2856a8]"
             >
               Share Your First Book
             </Link>

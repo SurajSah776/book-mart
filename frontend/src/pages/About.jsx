@@ -5,7 +5,7 @@ import TermsAndConditions from "../components/TermsAndConditions";
 
 function About() {
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen py-16">
+    <div className="bg-white min-h-screen py-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -13,13 +13,13 @@ function About() {
         className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-          <motion.div
+          <motion.div  className="bg-white p-8 rounded-xl shadow-lg border border-e9ecef">
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            <h1 className="text-4xl font-bold text-212529 mb-4">
               About BookExchange
             </h1>
             <p className="text-xl text-gray-600">
@@ -36,12 +36,12 @@ function About() {
               className="flex items-start gap-4"
             >
               <div className="flex-shrink-0">
-                <FaBook className="text-3xl text-gray-700" />
+                <FaBook className="text-3xl text-3e78ed" />
               </div>
               <div>
-                <h2 className="text-2xl font-semibold text-gray-800 mb-3">
+                <h2 className="text-2xl font-semibold text-212529 mb-3">
                   Our Mission
-                </h2>
+                </h2> 
                 <p className="text-gray-600 leading-relaxed">
                   We believe that every book deserves a new reader and every
                   reader deserves access to great books. Our platform
@@ -60,28 +60,28 @@ function About() {
               className="flex items-start gap-4"
             >
               <div className="flex-shrink-0">
-                <FaHandshake className="text-3xl text-gray-700" />
+                <FaHandshake className="text-3xl text-3e78ed" />
               </div>
               <div>
-                <h2 className="text-2xl font-semibold text-gray-800 mb-3">
+                <h2 className="text-2xl font-semibold text-212529 mb-3">
                   How It Works
                 </h2>
-                <div className="grid md:grid-cols-2 gap-4 text-gray-600">
+                <div className="grid md:grid-cols-2 gap-4 text-495057">
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
-                      <span className="w-6 h-6 bg-gray-700 text-white rounded-full flex items-center justify-center text-sm">
+                      <span className="w-6 h-6 bg-3e78ed text-white rounded-full flex items-center justify-center text-sm">
                         1
                       </span>
                       Create your free account
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="w-6 h-6 bg-gray-700 text-white rounded-full flex items-center justify-center text-sm">
+                      <span className="w-6 h-6 bg-3e78ed text-white rounded-full flex items-center justify-center text-sm">
                         2
                       </span>
                       Post books you want to share
                     </li>
                   </ul>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2"> 
                     <li className="flex items-center gap-2">
                       <span className="w-6 h-6 bg-gray-700 text-white rounded-full flex items-center justify-center text-sm">
                         3
@@ -107,12 +107,12 @@ function About() {
               className="flex items-start gap-4"
             >
               <div className="flex-shrink-0">
-                <FaUsers className="text-3xl text-gray-700" />
+                <FaUsers className="text-3xl text-3e78ed" />
               </div>
               <div>
-                <h2 className="text-2xl font-semibold text-gray-800 mb-3">
+                <h2 className="text-2xl font-semibold text-212529 mb-3">
                   Community Impact
-                </h2>
+                </h2> 
                 <p className="text-gray-600 leading-relaxed">
                   Our platform has facilitated thousands of book exchanges,
                   creating a vibrant community of readers who share not just
@@ -131,12 +131,12 @@ function About() {
               className="flex items-start gap-4"
             >
               <div className="flex-shrink-0">
-                <FaLeaf className="text-3xl text-gray-700" />
+                <FaLeaf className="text-3xl text-3e78ed" />
               </div>
               <div>
-                <h2 className="text-2xl font-semibold text-gray-800 mb-3">
+                <h2 className="text-2xl font-semibold text-212529 mb-3">
                   Sustainability
-                </h2>
+                </h2> 
                 <p className="text-gray-600 leading-relaxed">
                   By promoting book reuse, we're helping reduce paper waste and
                   the environmental impact of book production. Every book
@@ -155,7 +155,7 @@ function About() {
           >
             <Link
               to="/register"
-              className="inline-block bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300"
+              className="inline-block bg-3e78ed hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300"
             >
               Join Our Community
             </Link>

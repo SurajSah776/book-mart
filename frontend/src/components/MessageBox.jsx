@@ -81,7 +81,7 @@ const MessageBox = ({ postId, postOwner }) => {
     return null;
 
   return (
-    <div className="mt-6 border rounded-lg p-4 bg-white shadow-sm">
+    <div className="mt-6 border rounded-lg p-4 bg-white shadow-sm text-gray-800">
       <h3 className="text-lg font-semibold mb-4">Message the Owner</h3>
 
       {/* Messages container */}
@@ -98,9 +98,9 @@ const MessageBox = ({ postId, postOwner }) => {
             <div
               className={`max-w-[70%] p-3 rounded-lg ${
                 message.sender._id === currentUser._id
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-100 text-gray-800"
-              }`}
+                  ? "bg-[#3e78ed] text-white"
+                  : "bg-[#e9ecef] text-[#212529]"
+                }`}
             >
               <p className="text-sm">{message.content}</p>
               <span className="text-xs opacity-75 block mt-1">
@@ -123,14 +123,14 @@ const MessageBox = ({ postId, postOwner }) => {
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
           placeholder="Type your message..."
-          className="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 border border-[#e9ecef] rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           disabled={loading}
         />
         <button
           type="submit"
           disabled={loading || !newMessage.trim()}
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-        >
+          className="bg-[#3e78ed] text-white px-4 py-2 rounded-lg hover:bg-[#3366cc] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
           <FaPaperPlane className="w-4 h-4" />
         </button>
       </form>

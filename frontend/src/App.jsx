@@ -24,7 +24,7 @@ import Messages from "./pages/Messages";
 
 function App() {
   return (
-    <div className="flex flex-col justify-between min-h-screen">
+    <div className="flex flex-col justify-between min-h-screen bg-[#f5f5f0]">
       {/* Setting the Routing */}
       <Navbar />
       <div className="pt-[30px] sm:pt-[40px]">
