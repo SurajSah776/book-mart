@@ -140,7 +140,7 @@ const EditProfile = () => {
           </div>
           <button
             onClick={() => fileInputRef.current?.click()}
-            className="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors"
+            className="absolute bottom-0 right-0 bg-[#3e78ed] text-white p-2 rounded-full hover:bg-[#2e5ea3] transition-colors"
             type="button"
           >
             <FaCamera size={16} />
@@ -154,7 +154,7 @@ const EditProfile = () => {
           />
         </div>
       </div>
-      <h1 className="text-2xl font-bold mb-6 flex items-center">
+      <h1 className="text-2xl font-bold mb-6 flex items-center text-[#212529]">
         <FaUser className="mr-2" /> Edit Profile
       </h1>
 
@@ -164,7 +164,7 @@ const EditProfile = () => {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#212529]">
             First Name
           </label>
           <input
@@ -173,12 +173,12 @@ const EditProfile = () => {
             onChange={(e) =>
               setFormData({ ...formData, firstName: e.target.value })
             }
-            className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+            className="mt-1 block w-full border border-[#e9ecef] rounded-md p-2 text-[#495057] hover:bg-[#f5f5f0]"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#212529]">
             Last Name
           </label>
           <input
@@ -187,12 +187,12 @@ const EditProfile = () => {
             onChange={(e) =>
               setFormData({ ...formData, lastName: e.target.value })
             }
-            className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+            className="mt-1 block w-full border border-[#e9ecef] rounded-md p-2 text-[#495057] hover:bg-[#f5f5f0]"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#212529]">
             Email*
           </label>
           <input
@@ -201,11 +201,11 @@ const EditProfile = () => {
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
-            className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+            className="mt-1 block w-full border border-[#e9ecef] rounded-md p-2 text-[#495057] hover:bg-[#f5f5f0]"
             required
           />
         </div>
-
+        
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Phone*
@@ -216,14 +216,14 @@ const EditProfile = () => {
             onChange={(e) =>
               setFormData({ ...formData, phone: e.target.value })
             }
-            className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+            className="mt-1 block w-full border border-[#e9ecef] rounded-md p-2 text-[#495057] hover:bg-[#f5f5f0]"
             required
           />
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 flex items-center justify-center"
+          className="w-full bg-[#e91e63] text-white py-2 px-4 rounded-md hover:bg-[#bb164b] flex items-center justify-center"
         >
           <FaSave className="mr-2" /> Save Changes
         </button>

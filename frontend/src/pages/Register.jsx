@@ -88,7 +88,7 @@ function Register() {
 
   return (
     <>
-      <div className="w-fit min-h-[98vh] max-h-[100vh] mx-auto my-[50px] flex flex-col gap-2 items-center justify-center px-[30px] shadow-[5px_5px_12px_0px_gray] rounded-lg">
+      <div className="w-fit min-h-[98vh] max-h-[100vh] mx-auto my-[50px] flex flex-col gap-2 items-center justify-center px-[30px] shadow-[5px_5px_12px_0px_gray] rounded-lg bg-f5f5f0">
         {/* Error and Verification Messages */}
         {error && !verificationMessage && (
           <p className="text-red-500 text-sm mb-4">{error}</p>
@@ -111,7 +111,7 @@ function Register() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
             />
             <label
               for="floating_email"
@@ -131,7 +131,7 @@ function Register() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
             />
             <label
               for="floating_password"
@@ -154,7 +154,7 @@ function Register() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
             />
             <label
               for="floating_confirm_password"
@@ -179,7 +179,7 @@ function Register() {
                 onChange={handleChange}
                 placeholder=" "
                 required
-                className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
               />
               <label
                 for="floating_firstName"
@@ -199,7 +199,7 @@ function Register() {
                 onChange={handleChange}
                 placeholder=" "
                 required
-                className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
               />
               <label
                 for="floating_lastName"
@@ -222,7 +222,7 @@ function Register() {
                 onChange={handleChange}
                 placeholder=" "
                 required
-                className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
               />
               <label
                 for="floating_phone"
@@ -238,10 +238,10 @@ function Register() {
             <button
               type="submit"
               disabled={isLoading}
-              className={`text-white ${
+              className={`text-white bg-[#3e78ed] ${
                 isLoading
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-gray-500 hover:bg-gray-600"
+                  : "hover:bg-[#2d5ba3]"
               } focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center flex items-center justify-center`}
             >
               {isLoading ? (
@@ -281,7 +281,7 @@ function Register() {
           <div className="flex items-center gap-2">
             <span className="text-sm text-gray-700">Already a user?</span>
 
-            <button className="text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center">
+            <button className="text-white bg-[#3e78ed] hover:bg-[#2d5ba3] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center">
               <Link to="/login">Login</Link>
             </button>
           </div>

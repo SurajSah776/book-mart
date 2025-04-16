@@ -101,7 +101,7 @@ const RequestBookButton = ({ postId }) => {
     return (
       <div className="mt-3">
         <p className="text-red-500 text-sm">Error loading book details</p>
-      </div>
+        </div>
     );
   }
 
@@ -115,14 +115,18 @@ const RequestBookButton = ({ postId }) => {
     <FaShoppingCart />
   );
   const buttonColor = isCreditTransaction
-    ? "bg-blue-600 hover:bg-blue-700"
-    : "bg-green-600 hover:bg-green-700";
+    ? "bg-[#3e78ed] hover:bg-[#315fa3]"
+    : "bg-[#28a745] hover:bg-[#218838]";
+
+  const disabledButtonColor = "bg-[#cccccc]";
+
+  const errorMessageColor = "text-[#e91e63]";
 
   return (
     <div className="mt-3">
       <button
         onClick={handleRequest}
-        disabled={isLoading}
+        disabled={isLoading || !post}
         className={`w-full flex items-center justify-center py-2 px-4 rounded-md ${
           isLoading ? "bg-gray-400" : buttonColor
         } text-white`}
@@ -130,7 +134,7 @@ const RequestBookButton = ({ postId }) => {
         <span className="mr-2">{buttonIcon}</span>
         {isLoading ? "Processing..." : buttonText}
       </button>
-      {error && <p className="mt-1 text-red-500 text-sm">{error}</p>}
+      {error && <p className={`mt-1 ${errorMessageColor} text-sm`}>{error}</p>}
     </div>
   );
 };
