@@ -51,22 +51,22 @@ function Dashboard() {
     return <div className="text-center py-8 text-red-500">Error: {error}</div>;
 
   return (
-    <div className="bg-f5f5f0 container mx-auto px-4 py-8">
+    <div className="bg-gray-100 container mx-auto px-4 py-8">
       <div className="flex items-center mb-6">
-        <h1 className="text-2xl font-bold text-212529">
+        <h1 className="text-2xl font-bold text-color">
           Welcome back, {userData?.firstName || "Book Lover"}!
         </h1>
-        <FaBookOpen className="ml-2 text-3e78ed" />
+        <FaBookOpen className="ml-2 accent" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          <h2 className="text-xl font-semibold mb-4">Your Recent Shares</h2>
+          <h2 className="text-xl font-semibold mb-4 text-color">Your Recent Shares</h2>
           <PostList userId={userData?._id} />
         </div>
 
-        <div className="bg-ffffff p-6 rounded-lg shadow-md h-fit shadow-gray-300">
-          <h2 className="text-xl font-semibold mb-4 text-212529">Quick Actions</h2>
+        <div className="background p-6 rounded-lg shadow-sm h-fit">
+          <h2 className="text-xl font-semibold mb-4 text-color">Quick Actions</h2>
           <div className="space-y-3">
             <button
               onClick={() => (window.location.href = "/create-post")}
@@ -78,10 +78,10 @@ function Dashboard() {
             {/* Profile page */}
             <NavLink
               to={`/profile/${currentUser?._id}` }
-              className="flex items-center px-1 h-full hover:bg-e9ecef"
+              className="flex items-center px-1 h-full hover:bg-gray-200"
             >
-              <button className="w-full bg-ffffff text-495057 py-2 px-4 rounded-md hover:bg-e9ecef">
-                View Your Profile
+              <button className="w-full background text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200">
+                View Your Profile               
               </button>
             </NavLink>
           </div>

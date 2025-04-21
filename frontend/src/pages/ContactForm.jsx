@@ -22,11 +22,11 @@ function ContactForm() {
   return (
     <>
       <div className="min-h-screen py-[60px] flex justify-center items-center bg-white">
-        <div className="max-w-4xl w-full mx-4 bg-white p-8 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.16)] border border-e9ecef">
-          <h1 className="text-4xl font-bold text-212529 text-center mb-4">
+        <div className="max-w-4xl w-full mx-4 background p-8 rounded-xl shadow-md transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.16)] border border-gray-200">
+          <h1 className="text-4xl font-bold text-color text-center mb-4">
             Contact Us
           </h1>
-          <p className="text-495057 text-lg text-center mb-8 font-light">
+          <p className="text-gray-700 text-lg text-center mb-8 font-light">
             We'd love to hear from you! Fill out the form below and we'll get
             back to you as soon as possible
           </p>
@@ -39,7 +39,7 @@ function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className="w-full px-4 py-3 rounded-lg border border-e9ecef focus:border-3e78ed focus:outline-none transition-all duration-200 bg-f5f5f0 hover:bg-[#f5f5f0dd]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:accent focus:outline-none transition-all duration-200 bg-gray-100 hover:bg-gray-200"
                 required
               />
             </div>
@@ -51,7 +51,7 @@ function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your Email"
-                className="w-full px-4 py-3 rounded-lg border border-e9ecef focus:border-3e78ed focus:outline-none transition-all duration-200 bg-f5f5f0 hover:bg-[#f5f5f0dd]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:accent focus:outline-none transition-all duration-200 bg-gray-100 hover:bg-gray-200"
                 required
               />
             </div>
@@ -63,7 +63,7 @@ function ContactForm() {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder="Subject"
-                className="w-full px-4 py-3 rounded-lg border border-e9ecef focus:border-3e78ed focus:outline-none transition-all duration-200 bg-f5f5f0 hover:bg-[#f5f5f0dd]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:accent focus:outline-none transition-all duration-200 bg-gray-100 hover:bg-gray-200"
                 required
               />
             </div>
@@ -75,15 +75,13 @@ function ContactForm() {
                 onChange={handleChange}
                 placeholder="Your Message"
                 rows="5"
-                className="w-full px-4 py-3 rounded-lg border border-e9ecef focus:border-3e78ed focus:outline-none transition-all duration-200 bg-f5f5f0 hover:bg-[#f5f5f0dd] resize-none"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:accent focus:outline-none transition-all duration-200 bg-gray-100 hover:bg-gray-200 resize-none"
                 required
               ></textarea>
             </div>
 
             <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-gray-700 to-gray-900 text-white font-semibold py-4 px-6 rounded-lg transform transition-all duration-200 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98]"
-              style={{backgroundColor:"#3e78ed", hover:"#3266ca"}} >
+              type="submit" className="w-full accent text-white font-semibold py-4 px-6 rounded-lg transform transition-all duration-200 hover:secondary active:scale-[0.98]" >
               Send Message
             </button>
           </form>

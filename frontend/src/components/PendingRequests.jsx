@@ -116,33 +116,31 @@ const PendingRequests = () => {
   }
 
   if (pendingRequests.length === 0) {
-    return (<div className="bg-white rounded-lg shadow p-6 mb-6">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">Pending Book Requests</h2>
-      <p className="text-gray-600">You have no pending book requests.</p>
+    return (<div className="background rounded-lg shadow p-6 mb-6">
+      <h2 className="text-xl font-semibold mb-4 text-color">Pending Book Requests</h2>
+      <p className="text-color">You have no pending book requests.</p>
     </div>
     )
   }
 
   
   return (
-
-    <div className="bg-white rounded-lg shadow p-6 mb-6">
-      <h2 className="text-xl font-semibold mb-4">Pending Book Requests</h2>
+    <div className="background rounded-lg shadow p-6 mb-6">
+      <h2 className="text-xl font-semibold mb-4 text-color">Pending Book Requests</h2>
       <div className="space-y-4">
         {pendingRequests.map((request) => (
           <div
             key={request._id}
-            className="border rounded-lg p-4 flex flex-col md:flex-row gap-4"
-            style={{ borderColor: "#e9ecef" }}>
+            className="border rounded-lg p-4 flex flex-col md:flex-row gap-4 border-gray-200"
+           >
             <div className="md:w-1/4">
               {request.book.image ? (
                 <img
                   src={`http://localhost:5000${request.book.image}`}
                   alt={request.book.bookName}
                   className="w-full h-40 object-cover rounded"
-                />
-              ) : (<div className="w-full h-40 bg-gray-200 flex items-center justify-center rounded">
-                  <span className="text-gray-500">No image</span>
+                />) : (<div className="w-full h-40 background flex items-center justify-center rounded">
+                  <span className="text-gray-400">No image</span>
                 </div>)}
             </div>
 
@@ -150,37 +148,32 @@ const PendingRequests = () => {
               <h3 className="text-lg font-medium text-gray-800">{request.book.bookName}</h3>
               <p className="text-gray-600 mb-2" style={{ color: "#495057" }}>
                 Requested by: {request.fromUser.firstName}{" "}
-                {request.fromUser.lastName}
-              </p>
+                {request.fromUser.lastName}</p>
 
-              <div className="mb-4"> <h4 className="font-medium text-gray-700" style={{ color: "#212529" }}>
+              <div className="mb-4"> <h4 className="font-medium text-color">
                 Contact Information:
               </h4>
-                <p style={{ color: "#495057" }}>Email: {request.fromUser.email}</p>
-                <p style={{ color: "#495057" }}>Phone: {request.fromUser.phone}</p>
+                <p className="text-gray-700">Email: {request.fromUser.email}</p>
+                <p className="text-gray-700">Phone: {request.fromUser.phone}</p>
               </div> 
 
               <div className="flex flex-wrap gap-2">
                 <Link
                   to={`/profile/${request.fromUser._id}`}
-                  style={{ backgroundColor: "#3e78ed", color: "white" }}
-                  className="px-4 py-2 rounded hover:bg-[#2b5ea3]">
+                  className="px-4 py-2 rounded accent hover:secondary text-white">
                   View Profile
                 </Link>
 
                 <button
                   onClick={() => handleCompleteTransaction(request._id)}
-                  style={{ backgroundColor: "#28a745", color: "white" }}
-                  className="px-4 py-2 rounded hover:bg-[#218838]">
+                  className="px-4 py-2 rounded bg-green-500 hover:bg-green-700 text-white">
                   Complete Transaction
                 </button>
 
                 <button
                   onClick={() => handleRejectRequest(request._id)}
-                  className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-                >
+                  className="px-4 py-2 rounded accent hover:secondary text-white">
                   Reject Request </button>
-
               </div>
             </div>
           </div>

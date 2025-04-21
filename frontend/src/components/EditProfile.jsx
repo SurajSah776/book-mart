@@ -120,13 +120,13 @@ const EditProfile = () => {
   if (loading) return <div className="text-center py-12">Loading...</div>;
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-md mx-auto p-6 rounded-lg shadow-md background">
       <div className="text-center mb-6">
         <div className="relative inline-block">
-          <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-200 mx-auto">
+          <div className="w-24 h-24 rounded-full overflow-hidden background mx-auto">
             {imagePreview ? (
               <img
-                src={
+               src={
                   imagePreview.startsWith("http")
                     ? imagePreview
                     : `http://localhost:5000${imagePreview}`
@@ -134,11 +134,11 @@ const EditProfile = () => {
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
-            ) : (
-              <FaUser className="w-full h-full p-4 text-gray-400" />
+             ) : (
+              <FaUser className="w-full h-full p-4 text-color" />
             )}
           </div>
-          <button
+         <button
             onClick={() => fileInputRef.current?.click()}
             className="absolute bottom-0 right-0 bg-[#3e78ed] text-white p-2 rounded-full hover:bg-[#2e5ea3] transition-colors"
             type="button"
@@ -154,14 +154,14 @@ const EditProfile = () => {
           />
         </div>
       </div>
-      <h1 className="text-2xl font-bold mb-6 flex items-center text-[#212529]">
+      <h1 className="text-2xl font-bold mb-6 flex items-center text-color">
         <FaUser className="mr-2" /> Edit Profile
       </h1>
 
       {error && (
         <div className="mb-4 p-2 bg-red-100 text-red-700 rounded">{error}</div>
       )}
-
+  
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-[#212529]">
@@ -173,7 +173,7 @@ const EditProfile = () => {
             onChange={(e) =>
               setFormData({ ...formData, firstName: e.target.value })
             }
-            className="mt-1 block w-full border border-[#e9ecef] rounded-md p-2 text-[#495057] hover:bg-[#f5f5f0]"
+            className="mt-1 block w-full border border-gray-300 rounded-md p-2 text-color focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
@@ -187,7 +187,7 @@ const EditProfile = () => {
             onChange={(e) =>
               setFormData({ ...formData, lastName: e.target.value })
             }
-            className="mt-1 block w-full border border-[#e9ecef] rounded-md p-2 text-[#495057] hover:bg-[#f5f5f0]"
+            className="mt-1 block w-full border border-gray-300 rounded-md p-2 text-color focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
@@ -201,7 +201,7 @@ const EditProfile = () => {
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
-            className="mt-1 block w-full border border-[#e9ecef] rounded-md p-2 text-[#495057] hover:bg-[#f5f5f0]"
+            className="mt-1 block w-full border border-gray-300 rounded-md p-2 text-color focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
@@ -216,14 +216,14 @@ const EditProfile = () => {
             onChange={(e) =>
               setFormData({ ...formData, phone: e.target.value })
             }
-            className="mt-1 block w-full border border-[#e9ecef] rounded-md p-2 text-[#495057] hover:bg-[#f5f5f0]"
+            className="mt-1 block w-full border border-gray-300 rounded-md p-2 text-color focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
         </div>
 
         <button
-          type="submit"
-          className="w-full bg-[#e91e63] text-white py-2 px-4 rounded-md hover:bg-[#bb164b] flex items-center justify-center"
+         type="submit"
+          className="w-full accent text-white py-2 px-4 rounded-md hover:secondary flex items-center justify-center"
         >
           <FaSave className="mr-2" /> Save Changes
         </button>
@@ -233,3 +233,4 @@ const EditProfile = () => {
 };
 
 export default EditProfile;
+

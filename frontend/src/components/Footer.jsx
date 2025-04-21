@@ -3,7 +3,7 @@ import TermsAndConditions from "./TermsAndConditions";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#3e78ed] text-xs sm:text-lg text-[#f5f5f0]">
+    <footer className="primary text-xs sm:text-lg text-white">
       <div className="container mx-auto">
         {/* Logo and Intro(Links and social media) */}
         <div className="flex flex-col md:flex-row justify-around items-center md:items-start gap-4 pt-2">
@@ -11,7 +11,7 @@ export default function Footer() {
             <h1 className="font-semibold text-2xl sm:text-3xl">BookMart</h1>
 
             <p className="text-[#f5f5f0]/80 max-w-sm text-justify text-wrap text-xs sm:text-sm">
-              Exchange books for books, Let's build something amazing together!
+              Exchange books for books, Let&#39;s build something amazing together!
             </p>
 
             <div>
@@ -27,8 +27,8 @@ export default function Footer() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `py-1 px-2 hover:bg-[#e91e63] text-xs sm:text-sm ${
-                    isActive ? "bg-[#e91e63] font-semibold" : ""
+                  `py-1 px-2 hover:secondary text-xs sm:text-sm ${
+                    isActive ? "secondary font-semibold" : ""
                   }`
                 }
               >
@@ -38,8 +38,8 @@ export default function Footer() {
               <NavLink
                 to="/register"
                 className={({ isActive }) =>
-                  `py-1 px-2 hover:bg-[#e91e63] text-xs sm:text-sm ${
-                    isActive ? "bg-[#e91e63] font-semibold" : ""
+                  `py-1 px-2 hover:secondary text-xs sm:text-sm ${
+                    isActive ? "secondary font-semibold" : ""
                   }`
                 }
               >
@@ -49,8 +49,8 @@ export default function Footer() {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  `py-1 px-2 hover:bg-[#e91e63] text-xs sm:text-sm ${
-                    isActive ? "bg-[#e91e63] font-semibold" : ""
+                  `py-1 px-2 hover:secondary text-xs sm:text-sm ${
+                    isActive ? "secondary font-semibold" : ""
                   }`
                 }
               >
@@ -60,8 +60,8 @@ export default function Footer() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  `py-1 px-2 hover:bg-[#e91e63] text-xs sm:text-sm ${
-                    isActive ? "bg-[#e91e63] font-semibold" : ""
+                  `py-1 px-2 hover:secondary text-xs sm:text-sm ${
+                    isActive ? "secondary font-semibold" : ""
                   }`
                 }
               >
@@ -79,26 +79,26 @@ export default function Footer() {
             {/* Social Media Links */}
             <div className="flex sm:flex-col flex-wrap gap-2 text-sm max-w-sm">
               {/* Github */}
-              <div className="py-1 px-2 hover:bg-[#e91e63] text-xs sm:text-sm">
+              <div className="py-1 px-2 hover:secondary text-xs sm:text-sm">
                 <a href="https://github.com/SurajSah776" target="_blank">
                   Github
                 </a>
               </div>
 
               {/* Facebook */}
-              <div className="py-1 px-2 hover:bg-gray-600 text-xs sm:text-sm">
+              <div className="py-1 px-2 hover:secondary text-xs sm:text-sm">
                 <a 
                   href="https://www.facebook.com/surajkr.sah.775"
                   target="_blank"
                 >
                   Facebook
                 </a>
-              </div>
+              </div>       
 
               {/* LinkedIn */}
-              <div className="py-1 px-2 hover:bg-[#e91e63] text-xs sm:text-sm">
+              <div className="py-1 px-2 hover:secondary text-xs sm:text-sm">
                 <a
-                  href="https://www.linkedin.com/in/suraj-kumar-sah"
+                    href="https://www.linkedin.com/in/suraj-kumar-sah"
                   target="_blank"
                 >
                   LinkedIn
@@ -106,7 +106,7 @@ export default function Footer() {
               </div>
 
               {/* Twitter */}
-              <div className="py-1 px-2 hover:bg-[#e91e63] text-xs sm:text-sm">
+              <div className="py-1 px-2 hover:secondary text-xs sm:text-sm">
                 <a href="https://x.com/SurajSah776" target="_blank">
                   Twitter
                 </a>
@@ -116,11 +116,11 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-1 border-[#f5f5f0]/50 my-6"></div>
+        <div className="border-t border-1 border-white/50 my-6"></div>
 
         {/* Copyright */}
         <div className="text-center">
-          <p className="text-[#f5f5f0]/80">
+          <p className="text-white/80">
             © {new Date().getFullYear()} BookMart. All rights reserved.
           </p>
         </div>

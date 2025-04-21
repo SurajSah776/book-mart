@@ -103,12 +103,12 @@ const Messages = () => {
   if (loading) return <div className="text-center py-8">Loading...</div>;
 
   return (
-    <div className="bg-f5f5f0 max-w-6xl mx-auto p-4">
-      <h1 className="text-2xl font-bold text-212529 mb-6">Messages</h1>
+    <div className="bg-gray-100 max-w-6xl mx-auto p-4">
+      <h1 className="text-2xl font-bold text-color mb-6">Messages</h1>
 
       {/* Main conversation Area */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Conversations List */}
+          {/* Conversations List */}
         <div className="bg-white rounded-lg shadow-sm p-4 h-[calc(100vh-200px)] overflow-y-auto" style={{
               scrollbarColor: "#adb5bd transparent",
               scrollbarWidth: "thin",
@@ -126,12 +126,12 @@ const Messages = () => {
                     conversation.otherUser._id
                   );
                 }}
-                className={`w-full text-left p-3 rounded-lg mb-2 hover:bg-e9ecef transition-colors ${
+                className={`w-full text-left p-3 rounded-lg mb-2 hover:bg-gray-200 transition-colors ${
                   selectedConversation?.postId._id ===
                     conversation.postId._id &&
                   selectedConversation?.otherUser._id ===
                     conversation.otherUser._id
-                    ? "bg-e9ecef"
+                    ? "bg-gray-200"
                     : ""// #e9ecef
                 }`}
               >
@@ -148,13 +148,13 @@ const Messages = () => {
                     )}
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium text-212529">
+                    <p className="font-medium text-color">
                       {conversation.otherUser.firstName}{" "}
                       {conversation.otherUser.lastName}
                     </p>
-                    <p className="text-sm text-495057 truncate">
+                    <p className="text-sm text-gray-700 truncate">
                       {conversation.postId.bookName}
-                    </p>
+                    </p>                   
                   </div>
                   {conversation.unreadCount > 0 && (
                     <FaCircle className="text-3e78ed text-xs" />
@@ -166,7 +166,7 @@ const Messages = () => {
         </div>
 
         {/* Messages Area */}
-        <div className="md:col-span-2 bg-white rounded-lg shadow-sm p-4 h-[calc(100vh-200px)] flex flex-col" style={{ scrollbarColor: "#adb5bd transparent", scrollbarWidth: "thin", }}>
+        <div className="md:col-span-2 background rounded-lg shadow-sm p-4 h-[calc(100vh-200px)] flex flex-col" style={{ scrollbarColor: "#adb5bd transparent", scrollbarWidth: "thin", }}>
           {selectedConversation ? (
             <>
               {/* Conversation Header */}  
@@ -184,11 +184,11 @@ const Messages = () => {
                     )}
                   </div>
                   <div>
-                    <h2 className="font-medium text-212529">
+                    <h2 className="font-medium text-color">
                       {selectedConversation.otherUser.firstName}{" "}
                       {selectedConversation.otherUser.lastName}
                     </h2>
-                    <Link
+                    <Link                   
                       to={`/posts/${selectedConversation.postId._id}`}
                       className="text-sm text-3e78ed hover:underline"
                     >
@@ -209,11 +209,11 @@ const Messages = () => {
                         : "justify-start"
                     }`}
                   >
-                    <div
-                      className={`max-w-[70%] p-3 rounded-lg text-212529 ${
+                    <div                       
+                      className={`max-w-[70%] p-3 rounded-lg ${
                         message.sender._id === currentUser._id
                           ? "bg-3e78ed text-white"
-                          : "bg-e9ecef text-212529"
+                          : "bg-gray-200 text-gray-800"
                       }`}
                     >
                       <p className="text-sm">{message.content}</p>
@@ -232,12 +232,12 @@ const Messages = () => {
                   value={newMessage}
                   onChange={(e) => setNewMessage(e.target.value)}
                   placeholder="Type your message..."
-                  className="flex-1 border border-e9ecef rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-3e78ed"
+                  className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
                 />
                 <button
                   type="submit"
                   disabled={!newMessage.trim()}
-                  className="bg-3e78ed text-white px-6 py-2 rounded-lg hover:bg-[hsl(229,68%,58%)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="accent text-white px-6 py-2 rounded-lg hover:secondary disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >                
                   Send
                 </button>
@@ -252,5 +252,6 @@ const Messages = () => {
       </div>
     </div>
   );
-};
+};  
+
 export default Messages;

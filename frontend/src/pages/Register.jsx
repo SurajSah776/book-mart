@@ -88,13 +88,13 @@ function Register() {
 
   return (
     <>
-      <div className="w-fit min-h-[98vh] max-h-[100vh] mx-auto my-[50px] flex flex-col gap-2 items-center justify-center px-[30px] shadow-[5px_5px_12px_0px_gray] rounded-lg bg-f5f5f0">
+      <div className="w-fit min-h-[98vh] max-h-[100vh] mx-auto my-[50px] flex flex-col gap-2 items-center justify-center px-[30px] shadow-md rounded-lg bg-gray-100">
         {/* Error and Verification Messages */}
         {error && !verificationMessage && (
-          <p className="text-red-500 text-sm mb-4">{error}</p>
+          <p className="error text-sm mb-4">{error}</p>
         )}
         {verificationMessage && (
-          <p className="text-green-500 text-sm mb-4">{verificationMessage}</p>
+          <p className="success text-sm mb-4">{verificationMessage}</p>
         )}
 
         <form
@@ -111,11 +111,11 @@ function Register() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
+              className="block py-2.5 px-0 w-full text-md text-gray-800 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:accent peer"
             />
             <label
               for="floating_email"
-              className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-md text-gray-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:accent peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Email address
             </label>
@@ -131,17 +131,17 @@ function Register() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
+              className="block py-2.5 px-0 w-full text-md text-gray-800 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:accent peer"
             />
             <label
               for="floating_password"
-              className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-md text-gray-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:accent peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Password
             </label>
 
             {/* Error Message(If password doesnt match) */}
-            {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+            {error && <p className="error text-sm mt-1">{error}</p>}
           </div>
 
           {/* Confirm Password */}
@@ -154,17 +154,17 @@ function Register() {
               onChange={handleChange}
               placeholder=" "
               required
-              className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
+              className="block py-2.5 px-0 w-full text-md text-gray-800 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:accent peer"
             />
             <label
               for="floating_confirm_password"
-              className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-md text-gray-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:accent peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Confirm Password
             </label>
 
             {/* Error Message(If password doesnt match) */}
-            {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+            {error && <p className="error text-sm mt-1">{error}</p>}
           </div>
 
           {/* Full Name */}
@@ -179,11 +179,11 @@ function Register() {
                 onChange={handleChange}
                 placeholder=" "
                 required
-                className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
+                className="block py-2.5 px-0 w-full text-md text-gray-800 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:accent peer"
               />
               <label
                 for="floating_firstName"
-                className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-md text-gray-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:accent peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 First Name
               </label>
@@ -199,11 +199,11 @@ function Register() {
                 onChange={handleChange}
                 placeholder=" "
                 required
-                className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
+                className="block py-2.5 px-0 w-full text-md text-gray-800 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:accent peer"
               />
               <label
                 for="floating_lastName"
-                className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-md text-gray-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:accent peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Last Name
               </label>
@@ -222,11 +222,11 @@ function Register() {
                 onChange={handleChange}
                 placeholder=" "
                 required
-                className="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-[#3e78ed] peer"
+                className="block py-2.5 px-0 w-full text-md text-gray-800 bg-transparent border-0 border-b-2 border-gray-400 focus:outline-none focus:ring-0 focus:accent peer"
               />
               <label
                 for="floating_phone"
-                className="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-md text-gray-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:accent peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Phone Number
               </label>
@@ -238,10 +238,10 @@ function Register() {
             <button
               type="submit"
               disabled={isLoading}
-              className={`text-white bg-[#3e78ed] ${
+              className={`text-white accent ${
                 isLoading
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "hover:bg-[#2d5ba3]"
+                  : "hover:secondary"
               } focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center flex items-center justify-center`}
             >
               {isLoading ? (
@@ -276,12 +276,12 @@ function Register() {
 
         {/* Or Signup/Register */}
         <div className="flex flex-col justify-center items-center gap-4">
-          <span className="text-md text-gray-600">or</span>
+          <span className="text-md text-gray-700">or</span>
 
           <div className="flex items-center gap-2">
             <span className="text-sm text-gray-700">Already a user?</span>
 
-            <button className="text-white bg-[#3e78ed] hover:bg-[#2d5ba3] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center">
+            <button className="text-white accent hover:secondary focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center">
               <Link to="/login">Login</Link>
             </button>
           </div>

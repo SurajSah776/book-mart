@@ -81,12 +81,12 @@ function VerifyOTP() {
 
   if (!email) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-f5f5f0 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8 text-center">
-          <p className="text-red-500">
+          <p className="error">
             No email found for verification. Please register first.
           </p>
-          <button
+          <button            
             onClick={() => navigate("/register")}
             className={`mt-4 text-white bg-3e78ed hover:bg-[#2a5db0] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-md px-5 py-2.5`}
 
@@ -100,17 +100,17 @@ function VerifyOTP() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-f5f5f0 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-212529">
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-color">
             Verify Your Email
-          </h2>          <p className="mt-2 text-center text-sm text-495057">
+          </h2>          <p className="mt-2 text-center text-sm text-gray-700">
             Please enter the OTP sent to {email}
           </p>
         </div>
 
-        {error && (
+       {error && (
           <div className="text-red-500 text-sm text-center">{error}</div>
         )}
 
@@ -124,7 +124,7 @@ function VerifyOTP() {
               name="otp"
               type="text"
               required
-              className="appearance-none relative block w-full px-3 py-2 border border-e9ecef placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-3e78ed focus:border-3e78ed focus:z-10 sm:text-sm"
+              className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-400 text-gray-800 rounded-md focus:outline-none focus:ring-accent focus:border-accent focus:z-10 sm:text-sm"
               placeholder="Enter OTP"
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
@@ -136,20 +136,20 @@ function VerifyOTP() {
             <button
               type="submit"
               disabled={isLoading}
-              className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-3e78ed ${
+              className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white accent ${
                 isLoading
                   ? "cursor-not-allowed opacity-50"
-                  : "hover:bg-[#2a5db0]"
+                  : "hover:secondary"
               } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500`}
             >
               {isLoading ? "Verifying..." : "Verify OTP"}
             </button>
 
-            <button
+            <button              
               type="button"
               onClick={handleResendOTP}
               disabled={isLoading}
-              className="text-sm text-495057 hover:text-gray-900"
+              className="text-sm text-gray-700 hover:text-gray-900"
             >
               Didn't receive OTP? Click to resend
             </button>

@@ -30,11 +30,11 @@ const PostFilters = ({ onFilter }) => {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md my-4 border-1 border-e9ecef">
+    <div className="background p-4 rounded-lg shadow-md my-4 border-1 border-gray-200">
       <form onSubmit={handleSubmit} className="space-y-2">
         <div>
-          <label className="block text-sm font-medium text-212529 mb-1">
-            Search Books
+          <label className="block text-sm font-medium text-color mb-1">
+           Search Books
           </label>
 
           <input 
@@ -43,14 +43,14 @@ const PostFilters = ({ onFilter }) => {
             value={filters.search}
             onChange={handleChange}
             placeholder="Search by book or author"
-            className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            className="w-full p-2 text-color border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-212529 mb-1">
-              Book Condition
+            <label className="block text-sm font-medium text-color mb-1">
+             Book Condition
             </label>
             <select
               name="category"
@@ -58,7 +58,7 @@ const PostFilters = ({ onFilter }) => {
               onChange={handleChange}
               className="w-full p-2 border border-e9ecef rounded-md focus:ring-3e78ed focus:border-3e78ed text-495057 hover:bg-f5f5f0"
             >
-              <option value="">All Conditions</option>
+              <option value="">All Conditons</option>
               <option value="New">New</option>
               <option value="Used">Used</option>
             </select>
@@ -72,7 +72,7 @@ const PostFilters = ({ onFilter }) => {
               name="listingType"
               value={filters.listingType}
               onChange={handleChange}
-              className="w-full p-2 border border-e9ecef rounded-md focus:ring-3e78ed focus:border-3e78ed text-495057 hover:bg-f5f5f0"
+              className="w-full p-2 text-color border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="">All Listings</option>
               <option value="Exchange">Exchange (Credit)</option>
@@ -84,14 +84,14 @@ const PostFilters = ({ onFilter }) => {
         <div className="flex space-x-3 pt-2">
           <button
             type="submit"
-            className="flex-1 bg-3e78ed text-white py-2 px-4 rounded-md hover:bg-4e6bc7"
+            className="flex-1 accent text-white py-2 px-4 rounded-md hover:secondary"
           >
             Apply Filters
           </button>
           <button
             type="button"
             onClick={handleReset}
-            className="flex-1 bg-6c757d text-white py-2 px-4 rounded-md hover:bg-5a6268"
+            className="flex-1 bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600"
           >
             Reset
           </button>

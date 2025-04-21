@@ -1,5 +1,42 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* Global color palette using Tailwind CSS classes */
+.primary {
+  @apply bg-blue-900 text-white;
+}
+.secondary {
+  @apply bg-orange-500 text-blue-900;
+}
+.accent {
+  @apply bg-blue-500 text-white;
+}
+.background {
+  @apply bg-gray-100;
+}
+.text-color {
+  @apply text-gray-900;
+}
+
+/* Apply color palette to main elements */
+body {
+  @apply background text-color;
+}
+
+.navbar {
+  @apply primary;
+}
+
+.nav-link {
+  @apply text-white hover:secondary px-3 py-2 rounded-md;
+}
+.nav-link.active {
+  @apply secondary;
+}
+
+.button {
+  @apply accent rounded-md px-4 py-2 hover:secondary;
+}
 
 .profile-header {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, theme('colors.gray.100') 0%, theme('colors.blue.100') 100%)
 }
