@@ -50,21 +50,21 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-gray-500 text-white flex justify-between px-2 sm:px-4 items-center h-[50px] text-base sm:text-lg rounded-none fixed top-0 left-0 w-full z-40">
+    <div className="primary text-white flex justify-between px-2 sm:px-4 items-center h-[50px] text-base sm:text-lg rounded-none fixed top-0 left-0 w-full z-40">
       {/* Logo */}
-      <div className="left h-full flex items-center hover:cursor-pointer text-sm sm:text-lg font-semibold">
+      <div className="left h-full flex items-center hover:cursor-pointer text-sm sm:text-lg font-semibold ">
         <NavLink to="/">BookMart</NavLink>
       </div>
       {/* Middle Menu */}
-      <div className="middle h-full">
-        <ul className="flex h-full text-sm sm:text-base">
+      <div className="middle h-full ">
+        <ul className="flex h-full">
           <li>
             <NavLink
               to="/"
               className={({ isActive }) =>
                 `flex items-center px-2 sm:px-4 h-full hover:bg-gray-600 ${
-                  isActive ? "bg-gray-600 font-semibold" : ""
-                }`
+                  isActive ? "bg-[#e91e63] font-semibold" : "hover:bg-[#e91e63]"
+                } `
               }
             >
               Home
@@ -78,8 +78,8 @@ export default function Navbar() {
                   to="/contact"
                   className={({ isActive }) =>
                     `flex items-center px-2 sm:px-4 h-full hover:bg-gray-600 ${
-                      isActive ? "bg-gray-600 font-semibold" : ""
-                    }`
+                      isActive ? "bg-[#e91e63] font-semibold" : "hover:bg-[#e91e63]"
+                    } hover:secondary `
                   }
                 >
                   Contact
@@ -91,8 +91,8 @@ export default function Navbar() {
                   to="/about"
                   className={({ isActive }) =>
                     `flex items-center px-2 sm:px-4 h-full hover:bg-gray-600 ${
-                      isActive ? "bg-gray-600 font-semibold" : ""
-                    }`
+                      isActive ? "bg-[#e91e63] font-semibold" : "hover:bg-[#e91e63]"
+                    } hover:secondary `
                   }
                 >
                   About
@@ -108,8 +108,8 @@ export default function Navbar() {
                   to="/posts"
                   className={({ isActive }) =>
                     `flex items-center px-2 sm:px-4 h-full hover:bg-gray-600 ${
-                      isActive ? "bg-gray-600 font-semibold" : ""
-                    }`
+                      isActive ? "bg-[#e91e63] font-semibold" : "hover:bg-[#e91e63]"
+                    } hover:secondary `
                   }
                 >
                   Browse Books
@@ -121,8 +121,8 @@ export default function Navbar() {
                   to="/dashboard"
                   className={({ isActive }) =>
                     `flex items-center px-2 sm:px-4 h-full hover:bg-gray-600 ${
-                      isActive ? "bg-gray-600 font-semibold" : ""
-                    }`
+                      isActive ? "bg-[#e91e63] font-semibold" : "hover:bg-[#e91e63]"
+                    } hover:secondary `
                   }
                 >
                   Dashboard
@@ -141,7 +141,7 @@ export default function Navbar() {
             <div className="flex gap-0.5 sm:gap-1 px-0.5 sm:px-1 items-center">
               <NavLink
                 to="/messages"
-                className="relative flex items-center px-2 h-full hover:bg-gray-600"
+                className="relative flex items-center px-2 h-full hover:secondary"
               >
                 <FaEnvelope className="text-xl" />
                 {unreadCount > 0 && (
@@ -154,7 +154,7 @@ export default function Navbar() {
 
               <button
                 onClick={handleLogout}
-                className="flex items-center font-semibold px-2 sm:px-4 h-full hover:bg-gray-600 text-sm sm:text-base"
+                className="flex items-center font-semibold px-2 sm:px-4 h-full hover:secondary text-sm sm:text-base"
               >
                 Logout
               </button>
@@ -162,7 +162,7 @@ export default function Navbar() {
               {/* User Profile  */}
               <NavLink
                 to={`/profile/${currentUser?._id}`}
-                className="flex items-center px-0.5 sm:px-1 h-full hover:bg-gray-600"
+                className="flex items-center px-0.5 sm:px-1 h-full hover:secondary"
               >
                 <img
                   src={
@@ -182,23 +182,22 @@ export default function Navbar() {
           ) : (
             <>
               <NavLink
+              
                 to="/login"
                 className={({ isActive }) =>
-                  `flex items-center font-semibold px-2 sm:px-4 h-full hover:bg-gray-600 text-sm sm:text-base ${
-                    isActive ? "bg-gray-600 font-bold" : ""
-                  }`
-                }
+                  `flex items-center font-semibold px-2 sm:px-4 h-full hover:secondary text-sm sm:text-base ${isActive ? "secondary font-bold" : ""
+                  } `
+                } 
               >
                 Login
               </NavLink>
 
               <NavLink
                 to="/register"
-                className={({ isActive }) =>
-                  `flex items-center font-semibold px-2 sm:px-4 h-full hover:bg-gray-600 text-sm sm:text-base ${
-                    isActive ? "bg-gray-600 font-bold" : ""
+               className={({ isActive }) =>
+                  `flex items-center font-semibold px-2 sm:px-4 h-full hover:secondary text-sm sm:text-base ${isActive ? "secondary font-bold" : ""
                   }`
-                }
+                } 
               >
                 Signup
               </NavLink>

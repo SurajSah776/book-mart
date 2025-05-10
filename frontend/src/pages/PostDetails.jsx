@@ -39,17 +39,17 @@ const PostDetails = () => {
   if (!post) return <div className="text-center py-8">Book not found</div>;
 
   return (
-    <div className="max-w-4xl mx-auto p-5 pt-8">
+    <div className="max-w-4xl mx-auto p-5 pt-8 bg-gray-100">
       <button
         onClick={() => navigate(-1)}
-        className="flex items-center text-blue-600 hover:text-blue-800 mb-4"
+        className="flex items-center accent hover:secondary mb-4"
       >
         <FaArrowLeft className="mr-1" /> Back to all books
       </button>
 
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="background rounded-lg shadow-md overflow-hidden">
         {post.image && (
-          <div className="h-64 overflow-hidden">
+          <div className="h-64 overflow-hidden ">
             {/* <img
               src={`/public${post.image}`}
               alt={post.bookName}
@@ -75,19 +75,19 @@ const PostDetails = () => {
         )}
 
         <div className="p-6">
-          <h1 className="text-2xl font-bold mb-2">{post.bookName}</h1>
+          <h1 className="text-2xl font-bold mb-2 text-color">{post.bookName}</h1>
 
           <div className="flex items-center space-x-4 mb-4">
-            <div className="flex items-center text-gray-600">
+            <div className="flex items-center text-gray-700">
               <FaUserEdit className="mr-1" /> {post.authorName}
             </div>
             <span
               className={`px-3 py-1 text-sm rounded-full ${
                 post.category === "New"
-                  ? "bg-green-100 text-green-800"
+                  ? "bg-green-500 text-white"
                   : post.category === "Used"
-                  ? "bg-yellow-100 text-yellow-800"
-                  : "bg-gray-100 text-gray-800"
+                  ? "bg-yellow-500 text-gray-900"
+                  : "bg-gray-500 text-white"
               }`}
             >
               {post.category}
@@ -95,30 +95,30 @@ const PostDetails = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h3 className="font-medium mb-2 flex items-center">
+            <div className="background p-4 rounded-lg">
+              <h3 className="font-medium mb-2 flex items-center text-color">
                 <FaInfoCircle className="mr-2" /> Publication Details
               </h3>
               {post.publicationName && (
-                <p className="text-sm">Publisher: {post.publicationName}</p>
+                <p className="text-sm text-[#495057]">Publisher: {post.publicationName}</p>
               )}
-              {post.isbn && <p className="text-sm mt-1">ISBN: {post.isbn}</p>}
+              {post.isbn && <p className="text-sm mt-1 text-[#495057]">ISBN: {post.isbn}</p>}
             </div>
 
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h3 className="font-medium mb-2">Shared By</h3>
-              <p className="text-sm">
+            <div className="background p-4 rounded-lg">
+              <h3 className="font-medium mb-2 text-color">Shared By</h3>
+              <p className="text-sm text-gray-700">
                 {post.user?.username || "Book enthusiast"}
               </p>
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-700 mt-1">
                 Shared on {new Date(post.createdAt).toLocaleDateString()}
               </p>
             </div>
           </div>
 
-          <div className="border-t pt-4">
-            <h3 className="font-medium mb-2">About This Book</h3>
-            <p className="text-gray-700">
+          <div className="border-t pt-4 border-gray-200">
+            <h3 className="font-medium mb-2 text-color">About This Book</h3>
+            <p className="text-[#495057]">
               {post.description || "No additional description provided."}
             </p>
           </div>

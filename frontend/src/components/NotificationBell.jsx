@@ -118,33 +118,33 @@ const NotificationBell = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-2 text-gray-700 hover:bg-gray-100 rounded-full"
+        className="relative p-2 accent hover:background rounded-full"
         aria-label="Notifications"
       >
         <FaBell className="h-6 w-6" />
         {unreadCount > 0 && (
-          <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">
+          <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-[#e91e63] rounded-full">
             {unreadCount}
           </span>
         )}
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-80 bg-white rounded-md shadow-lg overflow-hidden z-20 max-h-96 overflow-y-auto">
-          <div className="py-2 px-4 bg-gray-100 flex justify-between items-center">
-            <h3 className="text-sm font-medium text-gray-900">Notifications</h3>
+        <div className="absolute right-0 mt-2 w-80 rounded-md shadow-lg overflow-hidden z-20 max-h-96 overflow-y-auto background">
+          <div className="py-2 px-4 background flex justify-between items-center">
+            <h3 className="text-sm font-medium text-color">Notifications</h3>
             {notifications.length > 0 && (
               <button
                 onClick={markAllAsRead}
-                className="text-xs text-blue-600 hover:text-blue-800"
+                className="text-xs accent hover:secondary"
               >
                 Mark all as read
-              </button>
+               </button>
             )}
           </div>
 
           <div className="divide-y divide-gray-200">
-            {notifications.length === 0 ? (
+             {notifications.length === 0 ? (
               <div className="py-4 px-4 text-sm text-gray-500 text-center">
                 No notifications
               </div>
@@ -168,10 +168,10 @@ const NotificationBell = () => {
                 return (
                   <div
                     key={notification._id}
-                    className={`py-3 px-4 ${
-                      !notification.isRead ? "bg-blue-50" : ""
-                    }`}
-                    onClick={() =>
+                    className={`py-3 px-4 divide-y divide-gray-200 ${
+                     !notification.isRead ? "background" : ""
+                   }`}
+                   onClick={() =>
                       !notification.isRead && markAsRead(notification._id)
                     }
                   >
@@ -193,7 +193,7 @@ const NotificationBell = () => {
                         )}
                       </div>
                       <div className="ml-3 flex-1">
-                        <p className="text-sm text-gray-900">
+                        <p className="text-sm text-color">
                           {notification.message}
                         </p>
                         <p className="text-xs text-gray-500 mt-1">
@@ -202,8 +202,8 @@ const NotificationBell = () => {
                         <div className="mt-2 space-x-4">
                           {isBookRequest && (
                             <Link
-                              to={linkTo}
-                              className="inline-block text-xs font-medium text-blue-600 hover:text-blue-800"
+                             to={linkTo}
+                              className="inline-block text-xs font-medium text-[#3e78ed] hover:text-[#e91e63]"
                             >
                               {linkText}
                             </Link>

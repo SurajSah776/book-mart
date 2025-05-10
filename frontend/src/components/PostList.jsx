@@ -77,14 +77,14 @@ const PostList = ({ userId }) => {
     setFilteredPosts(result);
   };
 
-  if (loading) return <div className="text-center py-8">Loading books...</div>;
+  if (loading) return <div className="text-center py-8 text-color">Loading books...</div>;
   if (error)
     return <div className="text-center py-8 text-red-500">Error: {error}</div>;
 
   return (
     <div className="pb-8">
       {/* Filter section (only shown on main posts page) */}
-      {!userId && (
+      {!userId && ( 
         <div className="px-4 md:px-20 my-5">
           <PostFilters onFilter={handleFilter} />
         </div>
@@ -92,14 +92,14 @@ const PostList = ({ userId }) => {
 
       {/* Empty state */}
       {filteredPosts.length === 0 ? (
-        <div className="text-center py-8 bg-white rounded-lg shadow mx-4">
-          <p className="text-gray-500">
+        <div className="text-center py-8 bg-gray-100 rounded-lg shadow mx-4">
+          <p className="text-color">
             {userId ? "No books shared yet." : "No books match your search."}
           </p>
           {userId && (
             <Link
-              to="/create-post"
-              className="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+              to="/create-post" 
+              className="mt-4 inline-block accent text-white py-2 px-4 rounded-md hover:secondary"
             >
               Share Your First Book
             </Link>

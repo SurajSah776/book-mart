@@ -89,7 +89,7 @@ const RequestBookButton = ({ postId }) => {
       <div className="mt-3">
         <button
           disabled
-          className="w-full flex items-center justify-center py-2 px-4 rounded-md bg-gray-400 text-white"
+          className="w-full flex items-center justify-center py-2 px-4 rounded-md bg-gray-300 text-white"
         >
           Loading...
         </button>
@@ -101,7 +101,7 @@ const RequestBookButton = ({ postId }) => {
     return (
       <div className="mt-3">
         <p className="text-red-500 text-sm">Error loading book details</p>
-      </div>
+        </div>
     );
   }
 
@@ -109,28 +109,29 @@ const RequestBookButton = ({ postId }) => {
   const buttonText = isCreditTransaction
     ? `Exchange Book (1 Credit)`
     : `Buy Book (₹${post.price})`;
+
+  const buttonColor = isCreditTransaction
+    ? "accent hover:secondary"
+    : "bg-[#28a745] hover:bg-[#218838]";
   const buttonIcon = isCreditTransaction ? (
     <FaHandHolding />
   ) : (
     <FaShoppingCart />
   );
-  const buttonColor = isCreditTransaction
-    ? "bg-blue-600 hover:bg-blue-700"
-    : "bg-green-600 hover:bg-green-700";
 
   return (
     <div className="mt-3">
       <button
         onClick={handleRequest}
-        disabled={isLoading}
+        disabled={isLoading || !post}
         className={`w-full flex items-center justify-center py-2 px-4 rounded-md ${
-          isLoading ? "bg-gray-400" : buttonColor
-        } text-white`}
+          isLoading ? "bg-gray-300" : buttonColor
+        } text-white ${!post ? "bg-gray-300" : ""}`}
       >
         <span className="mr-2">{buttonIcon}</span>
         {isLoading ? "Processing..." : buttonText}
       </button>
-      {error && <p className="mt-1 text-red-500 text-sm">{error}</p>}
+      {error && <p className={`mt-1 text-red-500 text-sm`}>{error}</p>}
     </div>
   );
 };
