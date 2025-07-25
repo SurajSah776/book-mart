@@ -12,6 +12,12 @@ import ContactForm from "./pages/ContactForm";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./ProtectedRoute";
 import AuthRedirectRoute from "./AuthRedirectRoute";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import AdminRoute from "./AdminRoute";
+import AdminDashboard from "./pages/AdminDashboard";
+import UserList from "./components/admin/UserList";
+import AdminPostList from "./components/admin/PostList";
 
 // Post Components
 import CreatePost from "./components/CreatePost";
@@ -39,6 +45,8 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/verify-otp" element={<VerifyOTP />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password/:token" element={<ResetPassword />} />
           </Route>
 
           {/* Routes for post */}
@@ -55,6 +63,14 @@ function App() {
           {/* Messages */}
           <Route element={<ProtectedRoute />}>
             <Route path="/messages" element={<Messages />} />
+          </Route>
+
+          {/* Admin Routes */}
+          <Route element={<AdminRoute />}>
+            <Route path="/admin" element={<AdminDashboard />}>
+              <Route path="users" element={<UserList />} />
+              <Route path="posts" element={<AdminPostList />} />
+            </Route>
           </Route>
         </Routes>
       </div>

@@ -128,6 +128,20 @@ export default function Navbar() {
                   Dashboard
                 </NavLink>
               </li>
+              {currentUser && currentUser.isAdmin && (
+                <li>
+                  <NavLink
+                    to="/admin/users"
+                    className={({ isActive }) =>
+                      `flex items-center px-2 sm:px-4 h-full hover:bg-gray-600 ${
+                        isActive ? "bg-gray-600 font-semibold" : ""
+                      }`
+                    }
+                  >
+                    Admin
+                  </NavLink>
+                </li>
+              )}
             </ul>
           )}
         </ul>
