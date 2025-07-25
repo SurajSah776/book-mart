@@ -57,6 +57,16 @@ const UserSchema = new mongoose.Schema(
         },
         otpExpires: {
             type: Date
+        },
+        passwordResetToken: {
+            type: String
+        },
+        passwordResetExpires: {
+            type: Date
+        },
+        isAdmin: {
+            type: Boolean,
+            default: false
         }
     }
 );

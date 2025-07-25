@@ -48,12 +48,32 @@ exports.createPost = async (req, res) => {
     }
 };
 
-// Get all posts (updated for Facebook-style feed)
+// Get all posts (updated for server-side filtering and searching)
 exports.getPosts = async (req, res) => {
     try {
         let query = {};
+
         if (req.query.user) {
             query.user = req.query.user;
+        }
+
+        if (req.query.search) {
+            query.$or = [
+                { bookName: { $regex: req.query.search, $options: 'i' } },
+                { authorName: { $regex: req.query.search, $options: 'i' } }
+            ];
+        }
+
+        if (req.query.category) {
+            query.category = req.query.category;
+        }
+
+        if (req.query.listingType) {
+            if (req.query.listingType === 'Exchange') {
+                query.listingType = 'donate';
+            } else if (req.query.listingType === 'Buy') {
+                query.listingType = 'sell';
+            }
         }
 
         const posts = await Post.find(query)

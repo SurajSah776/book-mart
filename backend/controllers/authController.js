@@ -162,3 +162,69 @@ exports.loginUser = async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 };
+
+// Forgot Password
+exports.forgotPassword = async (req, res) => {
+    try {
+        const { email } = req.body;
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        // Generate reset token
+        const resetToken = crypto.randomBytes(20).toString('hex');
+        user.passwordResetToken = crypto.createHash('sha256').update(resetToken).digest('hex');
+        user.passwordResetExpires = Date.now() + 10 * 60 * 1000; // 10 minutes
+
+        await user.save();
+
+        // Send email
+        const resetUrl = `${req.protocol}://${req.get('host')}/reset-password/${resetToken}`;
+        const message = `You are receiving this email because you (or someone else) has requested the reset of a password. Please make a PUT request to: \n\n ${resetUrl}`;
+
+        const transporter = createTransporter();
+        const mailOptions = {
+            from: process.env.EMAIL,
+            to: user.email,
+            subject: 'Password Reset Token',
+            text: message
+        };
+
+        await transporter.sendMail(mailOptions);
+
+        res.status(200).json({ message: 'Email sent' });
+    } catch (error) {
+        console.error('Forgot password error:', error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+// Reset Password
+exports.resetPassword = async (req, res) => {
+    try {
+        // Get hashed token
+        const resetPasswordToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
+
+        const user = await User.findOne({
+            passwordResetToken,
+            passwordResetExpires: { $gt: Date.now() }
+        });
+
+        if (!user) {
+            return res.status(400).json({ message: 'Invalid or expired token' });
+        }
+
+        // Set new password
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(req.body.password, salt);
+        user.passwordResetToken = undefined;
+        user.passwordResetExpires = undefined;
+        await user.save();
+
+        res.status(200).json({ message: 'Password updated successfully' });
+    } catch (error) {
+        console.error('Reset password error:', error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+};
