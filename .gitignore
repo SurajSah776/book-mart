@@ -1,6 +1,5 @@
 /frontend/node_modules
 /frontend/src/assets/
-/README.md
 /backend/node_modules/
 /backend/public/uploads
 /backend/.env
